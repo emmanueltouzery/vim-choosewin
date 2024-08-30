@@ -41,6 +41,7 @@ let s:keymap = {
       \ 's':     'swap',
       \ 'S':     'swap_stay',
       \ 'z':     'window_close',
+      \ 'u':     'choose_noautocmd',
       \ "\<CR>": 'win_land',
       \ }
 
@@ -49,6 +50,7 @@ let s:api_options = {
       \ 'swap':        0,
       \ 'window_close':0,
       \ 'swap_stay':   0,
+      \ 'choose_noautocmd':0,
       \ 'auto_choose': 0,
       \ 'noop':        0,
       \ }

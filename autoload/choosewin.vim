@@ -120,6 +120,8 @@ function! s:cw.choose() "{{{1
       let prompt = '[swap] ' . prompt
     elseif self.conf['window_close']
       let prompt = '[window_close] ' . prompt
+    elseif self.conf['choose_noautocmd']
+      let prompt = '[choose_noautocmd] ' . prompt
     endif
     let char = s:_.read_char(prompt)
 
@@ -139,6 +141,8 @@ function! s:cw.choose() "{{{1
         call self.action._swap(tabpagenr(), num)
       elseif self.conf['window_close']
         call self.action._close(num)
+      elseif self.conf['choose_noautocmd']
+        call self.action.goto_win_noautocmd(num)
       else
         call self.action.do_win(num)
       endif

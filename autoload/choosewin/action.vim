@@ -52,6 +52,10 @@ function! s:ac.init(app) "{{{1
   return self
 endfunction
 
+function! s:ac.goto_win_noautocmd(num, ...) "{{{1
+  silent execute 'noautocmd ' a:num ' wincmd w'
+endfunction
+
 function! s:ac.do_win(num) "{{{1
   call s:goto_win(a:num)
   throw 'CHOSE ' . a:num
@@ -119,6 +123,10 @@ endfunction
 function! s:ac._close(win) "{{{1
   call s:close_win(a:win)
   throw 'CLOSE'
+endfunction
+
+function! s:ac.do_choose_noautocmd() "{{{1
+  let self.app.conf['choose_noautocmd'] = 1
 endfunction
 
 " just like do_swap, handle twice thing
