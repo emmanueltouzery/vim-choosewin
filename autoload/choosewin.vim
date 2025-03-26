@@ -1,8 +1,8 @@
 " Vars:
 let s:vim_tab_options = {
       \ '&tabline':     '%!choosewin#tabline()',
-      \ '&guitablabel': '%{choosewin#get_tablabel(v:lnum)}',
       \ }
+      " \ '&guitablabel': '%{choosewin#get_tablabel(v:lnum)}',
 
 " Util::
 let s:_ = choosewin#util#get()
